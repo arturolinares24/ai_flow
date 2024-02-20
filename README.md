@@ -1,57 +1,35 @@
-mlops_project
+mlopsfinal
 ==============================
 
-Repo MLOps
+Estructura de repositorio para operaciones de Machine Learning
 
-Project Organization
+Organización del Proyecto
 ------------
 
+    ├── .gitignore             <- Archivos y directorios a ignorar en git.
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md              <- README de nivel superior para desarrolladores que usan este proyecto.
+    ├── requirements.txt       <- El archivo de requerimientos para reproducir el entorno de análisis.
+    ├── setup.py               <- Hace que el proyecto sea instalable con pip (pip install -e .) para importar src.
+    ├── test_environment.py    <- Pruebas para el entorno de análisis.
+    ├── tox.ini                <- Archivo tox con configuraciones para ejecutar tox.
+    │
     ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── processed          <- Conjuntos de datos finales, canónicos, para modelado.
+    │   └── raw                <- El volcado original de datos inmutables.
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── notebooks              <- Notebooks de Jupyter. Convención de nombres: número (para ordenar),
+    │                             iniciales del creador y una descripción corta delimitada por `-`.
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── reports                <- Análisis generados como HTML, PDF, LaTeX, etc.
+    │   └── figures            <- Gráficos y figuras generados para usar en informes.
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+    └── src
+        ├── __init__.py        <- Hace src un módulo de Python.
+        ├── evaluate.py        <- Scripts para evaluar los modelos entrenados.
+        ├── make_dataset.py    <- Scripts para descargar o generar datos.
+        ├── predict.py         <- Scripts para hacer predicciones con modelos entrenados.
+        └── train.py           <- Scripts para entrenar modelos.
 
 
 --------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
